@@ -11,7 +11,7 @@ let arr=bracketsConfig.map(el=>{
     if(str.includes(arr[j])){
       str=str.replace(arr[j], '');//str[i]=undefined;
      // str=str.filter(item=>item!=str[i]);
-     
+     i=-1;
     }
   
 }
