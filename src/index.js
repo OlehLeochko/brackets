@@ -1,23 +1,14 @@
 module.exports = function check(str, bracketsConfig) {
-  //str=str.split('');
-
-let arr=bracketsConfig.map(el=>{
+bracketsConfig=bracketsConfig.map(el=>{
   return el.join('')}
 )
-//console.log('str='+str)
-//let arr2=arr1.toString().split("")
-//for(let i=0; i<str.length; i++){
-  for(let j=0; j<arr.length; j++){
-    if(str.includes(arr[j])){
-      str=str.replace(arr[j], '');//str[i]=undefined;
-     // str=str.filter(item=>item!=str[i]);
-     i=-1;
-    }
-  
-}
-if(str.length===0){
-  return true;
-}
-return false;
-//str.length===0?true:false;
+for(let i = 0; i < bracketsConfig.length; ){
+  if(str.includes(bracketsConfig[i])){
+      str = str.replace(bracketsConfig[i], '');
+      i = 0;
+  } else {
+      i = i + 1;
+  }
+};
+return str.length === 0 ? true : false; 
 }
